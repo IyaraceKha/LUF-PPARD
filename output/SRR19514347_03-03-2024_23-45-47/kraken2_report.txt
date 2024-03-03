@@ -1,0 +1,9 @@
+100.00	2	0	R	1	root
+100.00	2	0	R1	3	  Bacteria
+100.00	2	0	P	110	    Proteobacteria
+100.00	2	0	C	175	      Alphaproteobacteria
+100.00	2	0	O	1092	        Sphingomonadales
+100.00	2	0	F	2862	          Sphingomonadaceae
+100.00	2	0	G	9204	            Sphingomonas
+ 50.00	1	1	S	30247	              Sphingomonas melonis
+ 50.00	1	1	S	30318	              Sphingomonas sp003075315
