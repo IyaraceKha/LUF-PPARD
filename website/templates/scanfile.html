@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block navbar %}
+  <a class="nav-item nav-link active" id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link " id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link " id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+{% block style %}
+  .timer {
+    display: block;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: .75rem;
+  }
+  h2 {text-align: center;}
+{% endblock %}
+{% block content %}
+{% if new_list|length == 0:%}
+  <br />
+  <div class="card border-dark">
+    <div class="card-body text-dark">
+      <h2>No file detected</h2>
+    </div>
+  </div>
+  <br />
+  <h2>Back to timer in</h2>
+  <span class="timer" id="timer">{{ time_left }}</span>
+  <script type="application/javascript">
+  const timerElement = document.getElementById("timer");
+
+  var timerCounter = 5;
+  const interval = setInterval(() => {
+    if (timerCounter === 0) {
+      window.location.href = "/timer";
+      clearInterval(interval);
+    }
+    timerCounter = timerCounter - 1;
+    timerElement.innerText = timerCounter;
+  }, 1000);
+  </script>
+{%else:%}
+  <h3 align="center">Scanning File</h3>
+  <div class="card border-dark">
+    <div class="card-header"><h4>New file</h4></div>
+    <div class="card-body text-dark">
+      {% for list_element in new_list %}
+        <p>{{ list_element }} </p>
+      {% endfor %}
+    </div>
+  </div>
+  <br />
+  <h2>Back to timer in</h2>
+  <span class="timer" id="timer">{{ time_left }}</span>
+  <script type="application/javascript">
+  const timerElement = document.getElementById("timer");
+
+  var timerCounter = 5;
+  const interval = setInterval(() => {
+    if (timerCounter === 0) {
+      window.location.href = "/timer";
+      clearInterval(interval);
+    }
+    timerCounter = timerCounter - 1;
+    timerElement.innerText = timerCounter;
+  }, 1000);
+  </script>
+{% endif %}
+{% endblock %}

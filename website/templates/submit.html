@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block navbar %}
+  <a class="nav-item nav-link active" id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link " id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link " id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="card border-dark">
+    <div class="card-body text-dark">
+      <p>{{sample_id}}</p>
+      <p>{{fastqdir}}</p>
+      <p>{{outputdir}}</p>
+      <p>{{time}}</p>
+      <p>{{dbdir}}</p>
+    </div>
+  </div>
+  <br />
+
+  <div class="pull-left">
+      <a type="Back" class="btn btn-danger" href="/newsample_wipe">Back</a>
+  </div>
+
+  <div class="pull-right">
+      <a type="Next" class="btn btn-primary" href="/timer" onclick="window.open('/timer', 'newwindow', 'width=800,height=600'); return false;">Next</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block navbar %}
+  <a class="nav-item nav-link " id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link active" id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link " id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+{% block content %}
+{% if sample_list == ['']:%}
+  <h3 align="center">Sample List</h3>
+  <div class="card border-dark">
+    <div class="card-body text-dark">
+      <h5>No sample detected</h5>
+    </div>
+  </div>
+{%else%}
+  <form method="post">
+    <h3 align="center">Sample List</h3>
+    <div class="card border-dark">
+      <div class="card-body text-dark">
+        {% for line in sample_list %}
+          <button type="submit" class="btn btn-secondary btn-lg btn-block" value={{line}} name="button">{{line}}</button>
+        {% endfor %}
+      </div>
+    </div>
+  </form>
+{%endif%}
+{% endblock %}

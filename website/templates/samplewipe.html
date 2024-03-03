@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block navbar %}
+  <a class="nav-item nav-link active" id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link " id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link " id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+{% block content %}
+  <br />
+  <div class="card border-dark">
+    <div class="card-body text-dark">
+      <h2>There is already a sample running</h2>
+      <h2>Do you want to stop and start the new sample?</h2>
+    </div>
+  </div>
+  <br />
+  <div class="pull-left">
+      <a type="Back" class="btn btn-danger" href="/timer">NO</a>
+  </div>
+
+  <div class="pull-right">
+      <a type="Next" class="btn btn-primary" href="/newsample_wipe">YES</a>
+  </div>
+{% endblock %}

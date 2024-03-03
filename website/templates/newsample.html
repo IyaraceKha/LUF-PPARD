@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block navbar %}
+  <a class="nav-item nav-link active" id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link " id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link " id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+{% block content %}
+  <form action="/submit" method="post">
+    <h3 align="center">New sample</h3>
+    <div class="card border-dark">
+      <div class="card-header"><h4>Sample</h4></div>
+      <div class="card-body text-dark">
+        <div class="form-group">
+          <label for="sample_id">Sample ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sample_id"
+            name="sample_id"
+            placeholder="Enter sample id"
+          />
+        </div>
+        <div class="form-group">
+          <label for="fastqdir">FASTQ directory</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fastqdir"
+            name="fastqdir"
+            placeholder="Enter FASTQ directory"
+          />
+        </div>
+        <div class="form-group">
+          <label for="outputdir">Output directory</label>
+          <input
+            type="text"
+            class="form-control"
+            id="outputdir"
+            name="outputdir"
+            placeholder="Enter output directory"
+          />
+        </div>
+        <div class="form-group">
+          <label for="time">Time(Minute)</label>
+          <input
+            type="text"
+            class="form-control"
+            id="time"
+            name="time"
+            placeholder="Enter waiting time before each run"
+          />
+        </div>
+        <div class="form-group">
+          <label for="dbdir">Database directory</label>
+          <input
+            type="text"
+            class="form-control"
+            id="dbdir"
+            name="dbdir"
+            placeholder="Enter database directory"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+{% endblock %}

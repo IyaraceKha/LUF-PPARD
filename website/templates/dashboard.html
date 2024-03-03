@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+  <a class="nav-item nav-link " id="newsample" href="/">New sample</a>
+  <a class="nav-item nav-link " id="samplelist" href="/samplelist">Sample list</a>
+  <a class="nav-item nav-link active" id="dashboard" href="/dashboard">Dashboard</a>
+{% endblock %}
+{% block content %}
+<br>
+<div class="card-deck">
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <h3 class="card-title">Sample ID</h3>
+      <h5>{{sample}}</h5>
+    </div>
+  </div>
+  <div class="card bg-light">
+    <div class="card-body text-center">
+      <h3 class="card-title">Status</h3>
+      {% if status:%}
+        <h5 style="color:green;">COMPLETE</h5>
+      {% else %}
+        <h5 style="color:red;">PROCESSING</h5>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="card border-dark">
+  <div class="card-body text-dark">
+    <h3 align="center">Pathogen</h3>
+    {% if k2_report == [] %}
+      <h5>&nbsp&nbspNo pathogen identified</h5>
+    {% else %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Percentage</th>
+            <th scope="col">Clade Reads</th>
+            <th scope="col">Taxon Reads</th>
+            <th scope="col">Rank</th>
+            <th scope="col">Taxonomic ID</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for elem in k2_report %}
+            {% set bar_width = "width: " + elem[0] + "%" %}
+
+            {% if elem[3] == "S": %}
+              <tr class="table-success">
+                <td>
+                  {{elem[0]}}
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+                <td>{{elem[1]}}</td>
+                <td>{{elem[2]}}</td>
+                <td>{{elem[3]}}</td>
+                <td>{{elem[4]}}</td>
+                <td>{{elem[5]}}</td>
+              </tr>
+            {% else: %}
+              <tr>
+                <td>
+                  {{elem[0]}}
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td>
+                <td>{{elem[1]}}</td>
+                <td>{{elem[2]}}</td>
+                <td>{{elem[3]}}</td>
+                <td>{{elem[4]}}</td>
+                <td>{{elem[5]}}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+</div>
+<br>
+<div class="card border-dark">
+  <div class="card-body text-dark">
+    <h3 align="center">Plasmid</h3>
+<div id="accordion">
+  {% set n = namespace(value=0) %}
+  {% if plasmid_list == [''] %}
+    <div class="card">
+      <div class="card-header">
+        <h5>&nbsp&nbspNo plasmid identified</h5>
+      </div>
+    </div>
+  {%else:%}
+    {% for line in plasmid_list %}
+      {% set n.value = n.value + 1 %}
+      {% set list = line.split('_-_') %}
+      {% set name = "/static/" + sample + "/" + line + ".png"%}
+      {% set header_name = "heading_plasmid_" + n.value|string %}
+      {% set card_name = "collapse_plasmid_" + n.value|string %}
+      {% set card_name_target = "#collapse_plasmid_" + n.value|string %}
+      <div class="card">
+        <div class="card-header" id={{header_name}}>
+          <h5>
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target={{card_name_target}} aria-expanded="false" aria-controls={{card_name}}>
+              {{list[4]}}&nbsp&nbsp&nbsp&nbspDepth&nbspCoverage:{{list[1]}}&nbsp&nbsp&nbsp&nbspMaximum&nbspDepth:{{list[2]}}&nbsp&nbsp&nbsp&nbspArea&nbspCovered:{{list[3]}}
+            </button>
+          </h5>
+        </div>
+        <div id={{card_name}} class="collapse" aria-labelledby={{header_name}} data-parent="#accordion">
+          <div class="card-body">
+            <img src={{name}}>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+</div>
+</div>
+<br>
+<div class="card border-dark">
+  <div class="card-body text-dark">
+    <h3 align="center">AMR</h3>
+    <div id="accordion">
+      {% set n = namespace(value=0) %}
+      {% if amr_list == [''] %}
+        <div class="card">
+          <div class="card-header">
+            <h5>&nbsp&nbspNo AMR identified</h5>
+          </div>
+        </div>
+      {%else:%}
+        {% for line in amr_list %}
+          {% set n.value = n.value + 1 %}
+          {% set list = line.split('_-_') %}
+          {% set name = "/static/" + sample + "/" + line + ".png"%}
+          {% set header_name = "heading_amr_" + n.value|string %}
+          {% set card_name = "collapse_amr_" + n.value|string %}
+          {% set card_name_target = "#collapse_amr_" + n.value|string %}
+          <div class="card">
+            <div class="card-header" id={{header_name}}>
+              <h5>
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target={{card_name_target}} aria-expanded="false" aria-controls={{card_name}}>
+                  {{list[4]}}&nbsp&nbsp&nbsp&nbspDepth&nbspCoverage:{{list[1]}}&nbsp&nbsp&nbsp&nbspMaximum&nbspDepth:{{list[2]}}&nbsp&nbsp&nbsp&nbspArea&nbspCovered:{{list[3]}}
+                </button>
+              </h5>
+            </div>
+            <div id={{card_name}} class="collapse" aria-labelledby={{header_name}} data-parent="#accordion">
+              <div class="card-body">
+                <img src={{name}}>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
