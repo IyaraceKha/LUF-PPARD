@@ -1,5 +1,6 @@
 # LUF-PPARD
-LUF-PPARD 
+LUF-PPARD: Lightweight User-Friendly - Pathogen, Plasmid, and Antimicrobial Resistance Detection
+<br>
 To create conda environment:
 ```
 conda env create -f env.yml
