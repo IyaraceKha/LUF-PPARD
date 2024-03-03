@@ -10,3 +10,8 @@ To start the program:
 ```
 python main.py
 ```
+To download databases
+```
+
+tar -zxvf database.tar.gz
+```
