@@ -1,0 +1,52 @@
+3000165 Strict tet(A) 98.48
+3000216 Strict acrB 91.52
+3000263 Strict marA 92.74
+3000316 Perfect mphA 100.0
+3000410 Perfect sul1 100.0
+3000491 Strict acrD 91.13
+3000516 Strict emrR 92.57
+3000518 Strict CRP 99.05
+3000793 Strict mdtB 89.81
+3000794 Strict mdtC 91.51
+3000828 Strict baeR 93.75
+3000873 Perfect TEM-1 100.0
+3001070 Perfect SHV-11 100.0
+3001328 Strict Escherichia coli mdfA 85.61
+3001396 Perfect OXA-1 100.0
+3001778 Perfect OXA-232 100.0
+3001878 Perfect CTX-M-15 100.0
+3002616 Strict aadA16 98.93
+3002695 Perfect cmlA5 100.0
+3002720 Perfect QnrB6 100.0
+3002826 Strict EreA2 92.16
+3002847 Perfect arr-2 100.0
+3002848 Perfect arr-3 100.0
+3002909 Strict vanG 38.66
+3003106 Strict Erm(42) 99.34
+3003308 Strict Escherichia coli parC conferring resistance to fluoroquinolones 94.28
+3003369 Strict Escherichia coli EF-Tu mutants conferring resistance to Pulvomycin 97.97
+3003378 Strict Escherichia coli AcrAB-TolC with MarR mutations conferring resistance to ciprofloxacin and tetracycline 83.33
+3003578 Strict PmrF 83.69
+3003843 Strict leuO 83.44
+3003890 Strict Escherichia coli UhpT with mutation conferring resistance to fosfomycin 95.03
+3003922 Perfect oqxA 100.0
+3003923 Strict oqxB 99.62
+3003950 Strict msbA 92.78
+3004111 Strict FosA6 98.55
+3004122 Strict Klebsiella pneumoniae OmpK37 99.47
+3004446 Strict Haemophilus influenzae PBP3 conferring resistance to beta-lactam antibiotics 52.37
+3004550 Perfect dfrA27 100.0
+3004580 Strict Klebsiella pneumoniae KpnE 99.17
+3004583 Perfect Klebsiella pneumoniae KpnF 100.0
+3004588 Strict Klebsiella pneumoniae KpnG 99.74
+3004597 Strict Klebsiella pneumoniae KpnH 94.02
+3004621 Strict AAC(3)-IIe 98.95
+3005010 Perfect qacEdelta1 100.0
+3005044 Strict OmpA 99.72
+3005047 Strict eptB 99.46
+3005053 Strict ArnT 99.09
+3005059 Strict LptD 99.87
+3005069 Strict rsmA 85.25
+3005116 Strict AAC(6')-Ib-cr6 98.99
+3007509 Strict Shigella flexneri acrA 84.63
+3007682 Perfect Mdtq 100.0

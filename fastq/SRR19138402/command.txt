@@ -1,0 +1,5 @@
+cat SRR19138402.fastq | head -16000 > SRR19138402_1.fastq
+cat SRR19138402.fastq | head -32000 | tail -16000 > SRR19138402_2.fastq
+cat SRR19138402.fastq | head -48000 | tail -16000 > SRR19138402_3.fastq
+cat SRR19138402.fastq | head -64000 | tail -16000 > SRR19138402_4.fastq
+cat SRR19138402.fastq | head -80000 | tail -16000 > SRR19138402_5.fastq

@@ -1,0 +1,5 @@
+cat SRR20601651.fastq | head -16000 > SRR20601651_1.fastq
+cat SRR20601651.fastq | head -32000 | tail -16000 > SRR20601651_2.fastq
+cat SRR20601651.fastq | head -48000 | tail -16000 > SRR20601651_3.fastq
+cat SRR20601651.fastq | head -64000 | tail -16000 > SRR20601651_4.fastq
+cat SRR20601651.fastq | head -80000 | tail -16000 > SRR20601651_5.fastq

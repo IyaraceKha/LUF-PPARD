@@ -1,0 +1,6 @@
+cat amr_list.txt|awk -F '[:]' '{print $2}'|awk '{t=$1;$1=$4;$4=t;print;}'|awk -F '[|]' '{print $1}'|awk '{t=$1;$1=$4;$4=t;print;}'|sort -k 1,1 > SRR20601652_amr_lufppard_result.txt
+cat SRR20601652.card-rgi.txt | awk -F'\t' '{ print $11, $6, $9, $10 }' | tail -n +2 |sort -u -k 1,1 > SRR20601652_amr_validate_result.txt
+join -t ' ' SRR20601652_amr_lufppard_result.txt  SRR20601652_amr_validate_result.txt -a1 | sort -n -r -k 2,2 > SRR20601652_join_amr_result.txt
+cat SRR20601652_amr_lufppard_result.txt | wc -l
+cat SRR20601652_amr_validate_result.txt | wc -l
+cat SRR20601652_join_amr_result.txt | awk '{print $5}' | sed '/^$/d' | wc -l

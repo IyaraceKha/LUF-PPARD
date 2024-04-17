@@ -1,0 +1,4 @@
+3003970 6.18 8 100.0
+3002922 4.73 5 100.0 Perfect vanR gene in vanC cluster 100.0
+3002966 2.81 3 100.0 Perfect vanXY gene in vanC cluster 100.0
+3000368 2.59 3 100.0 Strict vanC 99.71

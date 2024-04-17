@@ -1,0 +1,7 @@
+3000186 Strict tet(M) 99.37
+3000368 Strict vanC 99.71
+3002922 Perfect vanR gene in vanC cluster 100.0
+3002933 Strict vanS gene in vanC cluster 99.72
+3002961 Strict vanY gene in vanM cluster 34.83
+3002966 Perfect vanXY gene in vanC cluster 100.0
+3002970 Strict vanT gene in vanC cluster 98.49

@@ -1,0 +1,4 @@
+efetch -db nucleotide -format fasta -id DQ318958.1 > DQ318958.1.fa
+efetch -db nucleotide -format fasta -id FN597255.1 > FN597255.1.fa
+efetch -db nucleotide -format fasta -id JX566768.1 > JX566768.1.fa
+efetch -db nucleotide -format fasta -id NC_019049.1 > NC_019049.1.fa

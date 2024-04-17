@@ -1,0 +1,59 @@
+3000027 Strict emrA 99.74
+3000074 Perfect emrB 100.0
+3000165 Strict tet(A) 99.75
+3000186 Strict tet(M) 96.09
+3000206 Strict emrK 99.72
+3000216 Perfect acrB 100.0
+3000237 Perfect TolC 100.0
+3000254 Perfect emrY 100.0
+3000263 Perfect marA 100.0
+3000491 Strict acrD 99.81
+3000499 Strict AcrE 99.74
+3000502 Strict AcrF 99.41
+3000508 Strict gadX 98.54
+3000516 Perfect emrR 100.0
+3000518 Strict CRP 99.52
+3000656 Strict AcrS 98.64
+3000676 Perfect H-NS 100.0
+3000792 Strict mdtA 98.8
+3000793 Strict mdtB 99.81
+3000794 Strict mdtC 99.61
+3000795 Perfect mdtE 100.0
+3000796 Strict mdtF 99.48
+3000828 Strict baeR 95.42
+3000832 Perfect evgA 100.0
+3000833 Strict evgS 99.0
+3001214 Strict mdtM 98.05
+3001216 Perfect mdtH 100.0
+3001329 Perfect mdtG 100.0
+3001392 Perfect TEM-215 100.0
+3001917 Strict CTX-M-55 99.66
+3002619 Perfect aadA22 100.0
+3002641 Strict APH(3')-Ia 98.15
+3002660 Strict APH(6)-Id 99.64
+3002705 Strict floR 99.5
+3002909 Strict vanG 39.5
+3003308 Strict Escherichia coli parC conferring resistance to fluoroquinolones 99.87
+3003369 Strict Escherichia coli EF-Tu mutants conferring resistance to Pulvomycin 99.48
+3003378 Strict Escherichia coli AcrAB-TolC with MarR mutations conferring resistance to ciprofloxacin and tetracycline 98.61
+3003381 Strict Escherichia coli soxR with mutation conferring antibiotic resistance 100.0
+3003441 Strict cfrA 99.71
+3003550 Strict mdtP 97.75
+3003576 Strict eptA 99.63
+3003577 Strict ugd 99.23
+3003578 Perfect PmrF 100.0
+3003807 Strict Escherichia coli AcrAB-TolC with AcrR mutation conferring resistance to ciprofloxacin, tetracycline, and ceftazidime 100.0
+3003841 Strict kdpE 99.11
+3003843 Strict leuO 99.59
+3003889 Strict Escherichia coli GlpT with mutation conferring resistance to fosfomycin 99.56
+3003950 Perfect msbA 100.0
+3003952 Strict YojI 99.63
+3004043 Strict Escherichia coli acrA 99.75
+3004446 Strict Haemophilus influenzae PBP3 conferring resistance to beta-lactam antibiotics 52.93
+3004580 Strict Klebsiella pneumoniae KpnE 82.2
+3004583 Strict Klebsiella pneumoniae KpnF 84.4
+3004621 Strict AAC(3)-IIe 98.95
+3004656 Strict catII from Escherichia coli K-12 98.12
+3005053 Strict ArnT 63.52
+3005069 Strict rsmA 85.25
+3006875 Strict EC-14 99.47

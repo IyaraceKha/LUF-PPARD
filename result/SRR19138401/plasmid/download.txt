@@ -1,0 +1,4 @@
+efetch -db nucleotide -format fasta -id NC_010291.1 > NC_010291.1.fa
+efetch -db nucleotide -format fasta -id NZ_CP018069.1 > NZ_CP018069.1.fa
+efetch -db nucleotide -format fasta -id NZ_CP023782.1 > NZ_CP023782.1.fa
+efetch -db nucleotide -format fasta -id NZ_CP029169.1 > NZ_CP029169.1.fa
