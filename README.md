@@ -18,7 +18,7 @@ Databases are needed for LUF-PPARD to work. If you want to start your new sample
 <br>
 **To download databases**
 ```
-gdown https://drive.google.com/uc?id=1NAdboM0DIMHkGzLsGZ-ik1mDnSyx5l0D
+gdown https://drive.google.com/uc?id=1FqNGUTKnxwnZHH6mtvH_KxDEDZ-az4wj
 tar -zxvf database.tar.gz
 ```
 **To start the program:**
