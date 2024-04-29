@@ -4,6 +4,3 @@ paste -d ' ' SRR19138402_lufppard_card_aro.txt SRR19138402_lufppard_card_name.tx
 cat SRR19138402.card-rgi.txt | awk -F'\t' '{ print $11, $10 }' | tail -n +2 |sort -u -k 1,1 > SRR19138402_amr_validate_result.txt
 join -t ' ' SRR19138402_amr_lufppard_result.txt  SRR19138402_amr_validate_result.txt -a1 | sort -n -r -k 2,2 > SRR19138402_join_amr_result.txt
 cat SRR19138402_join_amr_result.txt | tr ' ' '\t' > SRR19138402_join_amr_result.tsv
-cat SRR19138402_amr_lufppard_result.txt | wc -l
-cat SRR19138402_amr_validate_result.txt | wc -l
-cat SRR19138402_join_amr_result.txt | awk '{print $4}' | sed '/^$/d' | wc -l

@@ -33,53 +33,143 @@
     {% if k2_report == [] %}
       <h5>&nbsp&nbspNo pathogen identified</h5>
     {% else %}
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Percentage</th>
-            <th scope="col">Clade Reads</th>
-            <th scope="col">Taxon Reads</th>
-            <th scope="col">Rank</th>
-            <th scope="col">Taxonomic ID</th>
-            <th scope="col">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for elem in k2_report %}
-            {% set bar_width = "width: " + elem[0] + "%" %}
-
-            {% if elem[3] == "S": %}
-              <tr class="table-success">
-                <td>
-                  {{elem[0]}}
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-                <td>{{elem[1]}}</td>
-                <td>{{elem[2]}}</td>
-                <td>{{elem[3]}}</td>
-                <td>{{elem[4]}}</td>
-                <td>{{elem[5]}}</td>
-              </tr>
-            {% else: %}
+      <ul class ="nav">
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#species">Species</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#genus">Genus</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#family">Family</a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#all">All</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="species" class="tab-pane fade show active">
+          <table class="table">
+            <thead>
               <tr>
-                <td>
-                  {{elem[0]}}
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </td>
-                <td>{{elem[1]}}</td>
-                <td>{{elem[2]}}</td>
-                <td>{{elem[3]}}</td>
-                <td>{{elem[4]}}</td>
-                <td>{{elem[5]}}</td>
+                <th scope="col">Percentage</th>
+                <th scope="col">Clade Reads</th>
+                <th scope="col">Taxon Reads</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Taxonomic ID</th>
+                <th scope="col">Name</th>
               </tr>
-            {% endif %}
-          {% endfor %}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {% for elem in k2_report_s %}
+                {% set bar_width = "width: " + elem[0] + "%" %}
+                <tr>
+                  <td>
+                    {{elem[0]}}
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td>{{elem[1]}}</td>
+                  <td>{{elem[2]}}</td>
+                  <td>{{elem[3]}}</td>
+                  <td>{{elem[4]}}</td>
+                  <td>{{elem[5]}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div id="genus" class="tab-pane fade">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Percentage</th>
+                <th scope="col">Clade Reads</th>
+                <th scope="col">Taxon Reads</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Taxonomic ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for elem in k2_report_g %}
+                {% set bar_width = "width: " + elem[0] + "%" %}
+                <tr>
+                  <td>
+                    {{elem[0]}}
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td>{{elem[1]}}</td>
+                  <td>{{elem[2]}}</td>
+                  <td>{{elem[3]}}</td>
+                  <td>{{elem[4]}}</td>
+                  <td>{{elem[5]}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div id="family" class="tab-pane fade">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Percentage</th>
+                <th scope="col">Clade Reads</th>
+                <th scope="col">Taxon Reads</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Taxonomic ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for elem in k2_report_f %}
+                {% set bar_width = "width: " + elem[0] + "%" %}
+                <tr>
+                  <td>
+                    {{elem[0]}}
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td>{{elem[1]}}</td>
+                  <td>{{elem[2]}}</td>
+                  <td>{{elem[3]}}</td>
+                  <td>{{elem[4]}}</td>
+                  <td>{{elem[5]}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div id="all" class="tab-pane fade">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Percentage</th>
+                <th scope="col">Clade Reads</th>
+                <th scope="col">Taxon Reads</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Taxonomic ID</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for elem in k2_report_all %}
+                {% set bar_width = "width: " + elem[0] + "%" %}
+                <tr>
+                  <td>
+                    {{elem[0]}}
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="{{bar_width}}" aria-valuenow="{{elem[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </td>
+                  <td>{{elem[1]}}</td>
+                  <td>{{elem[2]}}</td>
+                  <td>{{elem[3]}}</td>
+                  <td>{{elem[4]}}</td>
+                  <td>{{elem[5]}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     {% endif %}
   </div>
 </div>
@@ -125,7 +215,7 @@
 <br>
 <div class="card border-dark">
   <div class="card-body text-dark">
-    <h3 align="center">AMR</h3>
+    <h3 align="center">Antimicrobial Resistance Genes</h3>
     <div id="accordion">
       {% set n = namespace(value=0) %}
       {% if amr_list == [''] %}
@@ -161,5 +251,6 @@
     </div>
   </div>
 </div>
+
 
 {% endblock %}

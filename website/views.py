@@ -102,7 +102,7 @@ def dashboard():
         return redirect('/samplelist')
     else:
         f = open("website/static/" + sample + "/status.txt", "r")
-        status = int(f.read())
+        status = f.read()
         f.close()
         a = scan_pic("website/static/" + sample, "plasmid", ".png")
         plasmid_list = a.split('\n')
@@ -112,7 +112,19 @@ def dashboard():
         amr_list = b.split('\n')
         amr_list.sort(key=natural_keys)
         amr_list.reverse()
-        k2_report = []
+        k2_report_all = []
+
+        k2_report_s = []
+        k2_report_g = []
+        k2_report_f = []
+        k2_report_o = []
+        k2_report_c = []
+        k2_report_p = []
+        k2_report_k = []
+        k2_report_d = []
+        k2_report_r = []
+        k2_report_u = []
+
         try:
             f = open("website/static/" + sample + "/kraken2_report.txt", "r")
             k2_file = f.read().splitlines()
@@ -122,10 +134,45 @@ def dashboard():
             for line in k2_file:
                 elem = line.split('\t')
                 if float(elem[0]) >= 1:
-                    k2_report.append(elem)
+                    k2_report_all.append(elem)
+                    if elem[3].startswith('S'):
+                        k2_report_s.append(elem)
+                    elif elem[3].startswith('G'):
+                        k2_report_g.append(elem)
+                    elif elem[3].startswith('F'):
+                        k2_report_f.append(elem)
+                    elif elem[3].startswith('O'):
+                        k2_report_o.append(elem)
+                    elif elem[3].startswith('C'):
+                        k2_report_c.append(elem)
+                    elif elem[3].startswith('P'):
+                        k2_report_p.append(elem)
+                    elif elem[3].startswith('K'):
+                        k2_report_k.append(elem)
+                    elif elem[3].startswith('D'):
+                        k2_report_d.append(elem)
+                    elif elem[3].startswith('R'):
+                        k2_report_r.append(elem)
+                    elif elem[3].startswith('U'):
+                        k2_report_u.append(elem)
+
         except:
             print("no kraken2 report detected")
-        return render_template("dashboard.html", k2_report = k2_report , plasmid_list = plasmid_list, amr_list=amr_list, sample=sample, status=status)
+        return render_template("dashboard.html", k2_report_all = k2_report_all,
+                                                k2_report_s = k2_report_s,
+                                                k2_report_g = k2_report_g,
+                                                k2_report_f = k2_report_f,
+                                                k2_report_o = k2_report_o,
+                                                k2_report_c = k2_report_c,
+                                                k2_report_p = k2_report_p,
+                                                k2_report_k = k2_report_k,
+                                                k2_report_d = k2_report_d,
+                                                k2_report_r = k2_report_r,
+                                                k2_report_u = k2_report_u,
+                                                plasmid_list = plasmid_list,
+                                                amr_list=amr_list,
+                                                sample=sample,
+                                                status=status)
 
 @views.route('/samplelist', methods=['GET','POST'])
 def samplelist():
@@ -137,7 +184,7 @@ def samplelist():
         return redirect('/dashboard')
     elif request.method == 'GET':
         a = scan_sample("website/static/")
-        sample_list = a.split('\n')
+        sample_list = a.splitlines()
         return render_template('samplelist.html', sample_list=sample_list)
 
 def job():
@@ -167,7 +214,6 @@ def job():
         sample_list = f.read().splitlines()
         f.close()
         f = open(static_name + 'status.txt', "w")
-        f.write('0')
         f.close()
         threading.Thread(target=run_analysis, args=[dir_name, static_name, sample_list, db_dir], daemon=True).start()
         print("start analysis")

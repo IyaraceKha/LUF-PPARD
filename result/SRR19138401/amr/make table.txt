@@ -1,10 +1,6 @@
-cat amr_list.txt|awk -F '[:]' '{print $2}'|awk '{t=$1;$1=$4;$4=t;print;}'|awk -F '[|]' '{print $1}'|awk '{t=$1;$1=$4;$4=t;print;}'| awk '{print $1, $2}'|sort -k 1,1  > SRR19138401_amr_lufppard_result.txt
 cat amr_list.txt|awk -F '[:]' '{print $2}'|awk '{t=$1;$1=$4;$4=t;print;}'|awk -F '[|]' '{print $1}'|awk '{t=$1;$1=$4;$4=t;print;}'| awk '{print $1, $2}' > SRR19138401_lufppard_card_aro.txt
 cat amr_list.txt|awk -F '[:]' '{print $2}'|awk '{t=$1;$1=$4;$4=t;print;}'|awk -F '[|]' '{print $2}' > SRR19138401_lufppard_card_name.txt
 paste -d ' ' SRR19138401_lufppard_card_aro.txt SRR19138401_lufppard_card_name.txt |sort -k 1,1 > SRR19138401_amr_lufppard_result.txt
 cat SRR19138401.card-rgi.txt | awk -F'\t' '{ print $11, $10 }' | tail -n +2 |sort -u -k 1,1 > SRR19138401_amr_validate_result.txt
 join -t ' ' SRR19138401_amr_lufppard_result.txt  SRR19138401_amr_validate_result.txt -a1 | sort -n -r -k 2,2 > SRR19138401_join_amr_result.txt
 cat SRR19138401_join_amr_result.txt | tr ' ' '\t' > SRR19138401_join_amr_result.tsv
-cat SRR19138401_amr_lufppard_result.txt | wc -l
-cat SRR19138401_amr_validate_result.txt | wc -l
-cat SRR19138401_join_amr_result.txt | awk '{print $4}' | sed '/^$/d' | wc -l
